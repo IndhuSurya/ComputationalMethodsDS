@@ -1,0 +1,57 @@
+CSRstudio.utdallas.edu:8787
+
+Statistical Learning vs Machine Learning
+Same Techniques
+Statistical learning goes way back(Gauss was doing it in 1800)
+Math and CS difference
+ML involves algorithms driving the machines adapt (just making accurate prediction)
+SL is static (just making analysis of the data model and how the variables are related)
+Data---->Deduce Informed decisions------> Future Events
+Struturing, Cleaning the data
+Smaller data sets --> confidence goes down about the deduction
+
+Importance of relationship between variable
+
+2 fundamental about analyzing data
+supervised -> response variable provided
+unsupervised -> Lookin gfor any kind of relation in the data 
+
+Given a data, say smtn interesting----------> Go for unsupervised learning
+
+Supervised learning basic approach
+y response variable
+x predictor variable
+Epsilon noise term (because of which makes it non deterministic) assume mean is  zero as it should not be biased
+y=f(x)+epsilon
+interpretability, we need to have fHat model, that is it needs to have a function(that is have a fuctional dependency)
+yHat=fHat(x)
+predicatbility, fHat need not have a model
+
+In reality, y and yHat are random variable, y? because they are based on the dataset rndomly chosen and given
+Var(Epsilon), cannot be controlled , and will always be there, cannot be eliminated hence, irreducible
+(f(x)-fHat(x))square, is reducible
+y = ax2+bx+c-> parametric works good with interpretablity, assumes something about f
+nonparametric-> works good with Prediction
+
+How to deduce the Accuracy of the model
+
+MSE= 1/n sum((y-fHat(x))2)
+
+Overfitting is bad, as model differs drasticallly for different training data set chosen 
+Bias-Variance tradeoff
+Variance: Whats varying is the actual model, small changes in training set leads to big changes in the model(fHat(x))
+Bias: Making a big assumption about fHat(x)
+Bias increases for decrease in paramter leading to decrease in variance
+Overfitting occurs in the right side of the Bias-Variance curve (U-shaped)
+
+Classification Problems
+Misclassification percentage has to be looked upon
+
+Unsupervised Learning
+Assocation rules-> rules of the form, if x, y, and z happen then w will happen
+Useful in stores and markt strategy
+Clustering analysis
+Principal Compnent Analysis-> Dimensional reduction
+
+
+
