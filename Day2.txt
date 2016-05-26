@@ -1,0 +1,118 @@
+mycarData 
+Model determines Make and not vice versa, and it is redundant, also called as collinearity, it  can lead to bad modelling.
+We want all completely independent variables, if they are correlated, it can lead to problems.
+
+trees data
+plot(trees), you will get a scattter plot with respect to each and every variable
+girth and Volume are not independetn, they are correlated
+scatter plots will only show up 1:1 relationship ;between varaibles
+NA implies that variable is a linear combination of other variables, hence omit those variables with Na
+
+Association Rules Mining!
+unsupervised as we are trying to find relationships in the data
+variables are categorical, find connections between variables
+examples, binary classifications
+Doing k means using categorical data is Assocaiation rules mining, which cannot be called k means as it is done for real valued varaibles
+Rules
+
+if antecedent then consequence
+this is not causal, no predictive and response,  it is just that they happen together, which is unsupervised and not supervised learning
+n -. total number of transactiosn
+Venn diagram is conditionall probability
+3 ways to measure
+Confidence
+see a and b transactions number  and a,b,c transaction number
+how often it happens
+Support
+how often it applies?
+Lift
+ratio of abc number with a'b'c number
+if =1 then, pretty useless as a and b does not infer anything about c
+
+Rule 1: A->0
+Rule 2: B->1
+support(A->0)=3/7
+support(b->1)=2/7
+conf(A->0)=P(0/A)=3/4
+Conf(B->1)=P(1/B)=2/3
+
+Lift(A->0)=P(0/A)/P(0)=3/4/4/7=|.3|
+Lift(B->1)
+Lift should be > 1, they have some connections
+
+
+Decouple confiednce and support
+
+All possible subsets are computational impossible when brut force is used
+support is equal and greater than some calue, find all such subsets, for them compute the conf()
+
+as the values in rules increasees, support decreases
+So we go for A priori algorithm, looks for small rules, if it has some minimum support values, throws all the rules having that subset
+
+titanic dataset
+
+class, psurvived, gender ,sex, age, ciinsider these variables only
+
+
+
+cbind()-> column bind
+cleaning of data
+na.omit()
+trying too see if there is anyk ind of rules
+
+summary()
+treating everythign nmerically
+psurvived and sex-> turned into numeric
+have to turm it back to factors
+ifelse(test, yea, no) command
+as.factor(psurvived)
+sex->  change into male and female using ifelse()
+
+we have to convert age into different categories, as rules take only categorical data
+so convert into adult and child using ifelse
+
+
+change the columns to valid column names using colnames()
+
+
+Package---> arules to be used
+
+we need to write it as 1 and 0, so we convert into dataframes which was omitted and was only combined as a vectr so convert using as.data.frame()
+rules=apriori()// converts into rules
+inspect(rules)// finds the set of rules, support, confidence and lift
+lift less than 1 is because of round off error, <1 does not happen 
+lift 1 > lift 2 and antcedent 2 is included in antecedent 1 this implies delete rule 2 as it is redundant (doubtful)
+we can sort the rules wrt lift
+
+
+to plot these, use the package arulesviz
+plot(rules)->support vs confidence vs lift(color coded) for each rule
+
+method=graph
+method=paracoord
+
+
+
+adultData dataset
+when set to NULL, eliminates the column, similar to [,-1]
+
+
+consumerSurvey dataset
+magic number error on load(), use csv.read(, header=TRUE)
+convert all na's to 0, as instead of 0 it is NA
+drop all the extra data variables
+reads all the 1 and 0 as nuerical, so convert into true and false
+now build rules using apriori()
+
+0 and 1 to be converted into logical matrix
+
+
+
+
+
+
+
+
+
+
+
